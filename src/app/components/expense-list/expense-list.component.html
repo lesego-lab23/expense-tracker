@@ -1,0 +1,57 @@
+<!-- Income Table -->
+<h3>Income</h3>
+<table *ngIf="incomeExpenses.length; else noIncome">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Amount (R)</th>
+      <th>Date</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let e of incomeExpenses">
+      <td>{{ e.title }}</td>
+      <td>{{ e.amount | currency:'ZAR':'symbol-narrow':'1.2-2' }}</td>
+      <td>{{ e.date }}</td>
+      <td><button (click)="onDelete(e.id)">Delete</button></td>
+    </tr>
+    <tr>
+      <td><strong>Total</strong></td>
+      <td colspan="3"><strong>{{ totalIncome | currency:'ZAR':'symbol-narrow':'1.2-2' }}</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #noIncome>
+  <p>No income added yet.</p>
+</ng-template>
+
+<!-- Expense Table -->
+<h3>Expenses</h3>
+<table *ngIf="expenseExpenses.length; else noExpense">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Amount (R)</th>
+      <th>Date</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let e of expenseExpenses">
+      <td>{{ e.title }}</td>
+      <td>{{ e.amount | currency:'ZAR':'symbol-narrow':'1.2-2' }}</td>
+      <td>{{ e.date }}</td>
+      <td><button (click)="onDelete(e.id)">Delete</button></td>
+    </tr>
+    <tr>
+      <td><strong>Total</strong></td>
+      <td colspan="3"><strong>{{ totalExpense | currency:'ZAR':'symbol-narrow':'1.2-2' }}</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #noExpense>
+  <p>No expenses added yet.</p>
+</ng-template>

@@ -1,0 +1,12 @@
+<form (ngSubmit)="onSubmit()" class="expense-form">
+  <input type="text" [(ngModel)]="title" name="title" placeholder="Title" required />
+  <input type="number" [(ngModel)]="amount" name="amount" placeholder="Amount" required />
+  <input type="date" [(ngModel)]="date" name="date" required />
+
+  <select [(ngModel)]="category" name="category" required>
+    <option value="Expense">Expense</option>
+    <option value="Income">Income</option>
+  </select>
+
+  <button type="submit">Add Transaction</button>
+</form>

@@ -1,0 +1,29 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  padding: 8px;
+  border: 1px solid #aaa;
+  text-align: left;
+}
+
+th {
+  background: #e0d8b0; /* light beige */
+  color: #000;
+}
+
+tr:nth-child(even) {
+  background: #f7f3e3; /* slightly darker beige */
+}
+
+button {
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: none;
+  background: #b33c00; /* dark red for delete */
+  color: white;
+  cursor: pointer;
+}
